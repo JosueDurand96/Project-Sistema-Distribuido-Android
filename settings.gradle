@@ -1,2 +1,6 @@
+include ':helper'
+include ':networking'
+include ':domain'
+include ':data'
 include ':app'
 rootProject.name = "Vacunacion Peru"

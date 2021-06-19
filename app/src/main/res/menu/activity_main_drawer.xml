@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_assignment_ind_24"
+            android:title="Usuarios" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_baseline_playlist_add_check_24"
+            android:title="Locales de vacunación" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_baseline_medical_services_24"
+            android:title="Vacunas" />
+        <item
+            android:id="@+id/nav_campanas"
+            android:icon="@drawable/ic_baseline_event_available_24"
+            android:title="Campañas" />
+        <item
+            android:id="@+id/nav_avance_vacunacion"
+            android:icon="@drawable/ic_baseline_assistant_24"
+            android:title="Avance de vacunación" />
+    </group>
+</menu>

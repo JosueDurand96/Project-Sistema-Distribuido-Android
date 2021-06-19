@@ -1,0 +1,85 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/icons</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:actionMenuTextColor">@color/icons</item>
+    </style>
+
+    <style name="AppTheme3" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#2D343C</item>
+        <item name="colorPrimaryDark">#2D343C</item>
+        <item name="colorAccent">#2D343C</item>
+        <item name="colorControlNormal">#2D343C</item>
+        <item name="colorControlActivated">#2D343C</item>
+        <item name="colorControlHighlight">#2D343C</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:actionMenuTextColor">@color/icons</item>
+    </style>
+
+    <style name="AppTheme4" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#F6C53A</item>
+        <item name="colorPrimaryDark">#F6C53A</item>
+        <item name="colorAccent">#F6C53A</item>
+        <item name="colorControlNormal">#F6C53A</item>
+        <item name="colorControlActivated">#F6C53A</item>
+        <item name="colorControlHighlight">#F6C53A</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:actionMenuTextColor">#F6C53A</item>
+    </style>
+
+
+    <!-- Base application theme no actionBar. -->
+    <style name="AppTheme2" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/icons</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:actionMenuTextColor">@color/icons</item>
+    </style>
+
+    <style name="styleText" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="AppTheme.BPayCustomTil" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">18dp</item>
+        <item name="boxCornerRadiusTopEnd">18dp</item>
+        <item name="boxCornerRadiusBottomStart">18dp</item>
+        <item name="boxCornerRadiusBottomEnd">18dp</item>
+        <item name="boxBackgroundColor">@color/background_sale_fragment_color</item>
+        <item name="boxBackgroundMode">outline</item>
+    </style>
+
+
+    <style name="AppTheme.TextInputEditText" parent="Widget.AppCompat.EditText">
+        <item name="paddingStart">20dp</item>
+        <item name="paddingEnd">20dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textColorPrimaryDisableOnly">#000000</item>
+        <item name="android:editTextColor">#000000</item>
+    </style>
+
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
