@@ -1,10 +1,10 @@
-package com.durand.vacunacionperu.ui.home
+package com.durand.vacunacionperu.ui.users
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class UserViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"

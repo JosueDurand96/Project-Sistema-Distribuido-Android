@@ -1,4 +1,4 @@
-package com.durand.vacunacionperu.ui.gallery
+package com.durand.vacunacionperu.ui.local_vaccination
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.durand.vacunacionperu.R
 
-class GalleryFragment : Fragment() {
+class LocalVaccinationFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var localVaccinationViewModel: LocalVaccinationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        localVaccinationViewModel =
+            ViewModelProvider(this).get(LocalVaccinationViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_local_vaccination, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        localVaccinationViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

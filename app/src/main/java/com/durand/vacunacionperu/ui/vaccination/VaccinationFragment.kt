@@ -1,4 +1,4 @@
-package com.durand.vacunacionperu.ui.slideshow
+package com.durand.vacunacionperu.ui.vaccination
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.durand.vacunacionperu.R
 
-class SlideshowFragment : Fragment() {
+class VaccinationFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
+    private lateinit var vaccinationViewModel: VaccinationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
+        vaccinationViewModel =
+            ViewModelProvider(this).get(VaccinationViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_vaccination, container, false)
         val textView: TextView = root.findViewById(R.id.text_slideshow)
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+        vaccinationViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
