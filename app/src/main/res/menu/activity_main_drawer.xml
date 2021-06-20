@@ -21,8 +21,8 @@
             android:icon="@drawable/ic_baseline_event_available_24"
             android:title="@string/campa_as" />
         <item
-            android:id="@+id/nav_avance_vacunacion"
+            android:id="@+id/nav_advance_vaccination"
             android:icon="@drawable/ic_baseline_assistant_24"
-            android:title="Avance de vacunación" />
+            android:title="@string/avance_de_vacunaci_n" />
     </group>
 </menu>

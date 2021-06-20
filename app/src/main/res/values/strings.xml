@@ -16,4 +16,5 @@
     <string name="usuarios">Usuarios</string>
     <string name="vacunas">Vacunas</string>
     <string name="campa_as">Campañas</string>
+    <string name="avance_de_vacunaci_n">Avance de vacunación</string>
 </resources>

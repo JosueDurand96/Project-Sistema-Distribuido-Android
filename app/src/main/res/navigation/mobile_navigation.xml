@@ -22,4 +22,15 @@
         android:name="com.durand.vacunacionperu.ui.vaccination.VaccinationFragment"
         android:label="@string/vacunas"
         tools:layout="@layout/fragment_vaccination" />
+
+    <fragment
+        android:id="@+id/nav_campaign"
+        android:name="com.durand.vacunacionperu.ui.campaign.CampaignFragment"
+        android:label="@string/campa_as"
+        tools:layout="@layout/fragment_campaign" />
+    <fragment
+        android:id="@+id/nav_advance_vaccination"
+        android:name="com.durand.vacunacionperu.ui.advance_vaccination.AdvanceVaccinationFragment"
+        android:label="@string/avance_de_vacunaci_n"
+        tools:layout="@layout/fragment_advance_vaccination" />
 </navigation>
