@@ -28,10 +28,8 @@ class VaccinationViewModel : ViewModel(), KoinComponent {
         try {
             _state.value = ScreenState.Loading
             viewModelScope.launch {
-                getProfessionsUseCase.run("").either(::error, ::responseCategorie)
-            }
-        } catch (e: Exception) {
-        }
+                getProfessionsUseCase.run("").either(::error, ::responseCategorie) }
+        } catch (e: Exception) { }
     }
 
     private fun responseCategorie(list: VaccinationMasterResponseModel) {

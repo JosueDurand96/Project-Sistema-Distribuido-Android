@@ -32,7 +32,6 @@ object VaccinationMapper {
         cardDataModel.s_nombre = cardDataResponse.s_nombre
         cardDataModel.s_fabricante = cardDataResponse.s_fabricante
         cardDataModel.qt_dosis = cardDataResponse.qt_dosis
-
         cardDataModel.qt_dias = cardDataResponse.qt_dias
         cardDataModel.s_usu_crea = cardDataResponse.s_usu_crea
         cardDataModel.d_fec_crea = cardDataResponse.d_fec_crea
