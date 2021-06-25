@@ -19,6 +19,7 @@ import com.durand.helper.base.BaseFragment
 import com.durand.vacunacionperu.R
 import com.durand.vacunacionperu.ui.vaccination.add.AddVaccinationFragment
 import com.durand.vacunacionperu.util.ScreenState
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_vaccination.*
 
 
@@ -27,7 +28,7 @@ class VaccinationFragment : BaseFragment() {
     private lateinit var vaccinationViewModel: VaccinationViewModel
     private lateinit var vaccinationAdapter: VaccinationAdapter
     private lateinit var vaccinationRecyclerView: RecyclerView
-
+    private lateinit var vaccinationFab: FloatingActionButton
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,8 +37,10 @@ class VaccinationFragment : BaseFragment() {
         vaccinationViewModel = ViewModelProvider(this).get(VaccinationViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_vaccination, container, false)
         vaccinationRecyclerView = root.findViewById(R.id.vaccinationRecyclerView)
-
-
+        vaccinationFab = root.findViewById(R.id.vaccinationFab)
+        vaccinationFab.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_vaccination_to_nav_vaccinwation)
+        }
         return root
     }
 
@@ -64,6 +67,7 @@ class VaccinationFragment : BaseFragment() {
             is VaccinationState.ShowSuccess -> {
                 vaccinationProgressBar.visibility = View.GONE
                 vaccinationList(renderState.reg)
+
             }
             is VaccinationState.ShowError -> {
 
@@ -80,7 +84,7 @@ class VaccinationFragment : BaseFragment() {
         vaccinationAdapter.setListenerItemSelected(object :
             VaccinationAdapter.OnClickSelectedPedidosPendientes {
             override fun onSelectPedidosPendientes(id: Int?, name: String) {
-                findNavController().navigate(R.id.action_nav_vaccination_to_nav_vaccinwation)
+
             }
         })
     }

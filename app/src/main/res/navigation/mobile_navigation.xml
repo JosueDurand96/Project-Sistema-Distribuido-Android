@@ -24,6 +24,8 @@
         tools:layout="@layout/fragment_vaccination" >
         <action
             android:id="@+id/action_nav_vaccination_to_nav_vaccinwation"
+            app:popUpToInclusive="true"
+            app:popUpTo="@+id/nav_vaccination"
             app:destination="@id/nav_vaccinwation" />
     </fragment>
     <fragment
