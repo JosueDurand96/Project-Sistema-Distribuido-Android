@@ -14,7 +14,9 @@ import androidx.activity.addCallback
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.durand.domain.request.VaccinationRequest
+import com.durand.helper.base.BaseFragment
 import com.durand.vacunacionperu.R
 import com.durand.vacunacionperu.ui.init.LoginActivity
 import com.durand.vacunacionperu.util.ScreenState
@@ -22,14 +24,15 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 
-class AddVaccinationFragment : Fragment() {
+class AddVaccinationFragment : BaseFragment() {
+
     private lateinit var cantidadDiasDosisTextInputEditText: TextInputEditText
     private lateinit var cantidadDosisTextInputEditText: TextInputEditText
     private lateinit var fabricaEditText: TextInputEditText
     private lateinit var nameEditText: TextInputEditText
     private lateinit var loginButton: Button
     private lateinit var addVaccinationViewModel: AddVaccinationViewModel
-    private lateinit var mRoot:ConstraintLayout
+    private lateinit var mRoot: ConstraintLayout
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,10 +51,17 @@ class AddVaccinationFragment : Fragment() {
         mRoot = root.findViewById(R.id.addVaccinationConstraintLayout)
 
         loginButton.setOnClickListener {
-            if (  nameEditText.text.toString().isEmpty() or   fabricaEditText.text.toString().isEmpty() or  cantidadDosisTextInputEditText.text.toString().isEmpty() or      cantidadDiasDosisTextInputEditText.text.toString().isEmpty() ){
-                Snackbar.make(mRoot,"Por favor ningun campo debe estar vacío!", Snackbar.LENGTH_SHORT).setBackgroundTint(Color.RED).show()
+            if (nameEditText.text.toString().isEmpty() or fabricaEditText.text.toString()
+                    .isEmpty() or cantidadDosisTextInputEditText.text.toString()
+                    .isEmpty() or cantidadDiasDosisTextInputEditText.text.toString().isEmpty()
+            ) {
+                Snackbar.make(
+                    mRoot,
+                    "Por favor ningun campo debe estar vacío!",
+                    Snackbar.LENGTH_SHORT
+                ).setBackgroundTint(Color.RED).show()
 
-            }else{
+            } else {
                 addVaccinationViewModel.postVaccination(
                     VaccinationRequest(
                         nameEditText.text.toString(),
@@ -76,6 +86,8 @@ class AddVaccinationFragment : Fragment() {
     private fun registerProcessRenderState(renderState: AddVaccinationState) {
         when (renderState) {
             is AddVaccinationState.ShowSuccess -> {
+                Snackbar.make(mRoot, "Agregado correctament!", Snackbar.LENGTH_SHORT)
+                    .setBackgroundTint(Color.GREEN).show()
                 finish()
             }
             is AddVaccinationState.ShowError -> {
@@ -84,20 +96,16 @@ class AddVaccinationFragment : Fragment() {
         }
     }
 
-    private fun finish(){
-        val duration_splash = 1000
+    private fun finish() {
+        val duration_splash = 1500
         Handler().postDelayed({
-            Snackbar.make(mRoot,"Agregado correctament!", Snackbar.LENGTH_SHORT).setBackgroundTint(Color.GREEN).show()
 
-            requireActivity().onBackPressedDispatcher.addCallback(this)
+            findNavController().navigate(R.id.nav_vaccination)
+
         }, duration_splash.toLong())
 
 
     }
 
-
-}
-
-private fun OnBackPressedDispatcher.addCallback(addVaccinationFragment: AddVaccinationFragment) {
 
 }
