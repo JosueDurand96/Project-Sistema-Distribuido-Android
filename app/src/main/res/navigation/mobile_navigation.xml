@@ -16,17 +16,31 @@
         android:name="com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationFragment"
         android:label="@string/locales_de_vacunaci_n"
         tools:layout="@layout/fragment_local_vaccination" />
+    <fragment
+        android:id="@+id/nav_vacci_update"
+        android:name="com.durand.vacunacionperu.ui.vaccination.update.UpdateVaccinationFragment"
+        android:label="@string/vacunas"
+        tools:layout="@layout/update_vaccination_fragment" />
 
     <fragment
         android:id="@+id/nav_vaccination"
         android:name="com.durand.vacunacionperu.ui.vaccination.VaccinationFragment"
         android:label="@string/vacunas"
         tools:layout="@layout/fragment_vaccination" >
+
+
         <action
             android:id="@+id/action_nav_vaccination_to_nav_vaccinwation"
             app:popUpToInclusive="true"
+            android:label="@string/vacunas"
             app:popUpTo="@+id/nav_vaccination"
             app:destination="@id/nav_vaccinwation" />
+        <action
+            android:id="@+id/action_nav_vaccination_to_nav_vacci_update"
+            app:popUpToInclusive="true"
+            android:label="@string/vacunas"
+            app:popUpTo="@+id/nav_vaccination"
+            app:destination="@id/nav_vacci_update" />
     </fragment>
     <fragment
         android:id="@+id/nav_vaccinwation"

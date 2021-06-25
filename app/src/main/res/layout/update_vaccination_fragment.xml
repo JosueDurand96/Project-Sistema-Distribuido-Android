@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/updateaddVaccinationConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.vaccination.update.UpdateVaccinationFragment">
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Actualizar Vacuna"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameTextInputLayout"
+        style="@style/AppTheme.BPayCustomTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/updatenameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:inputType="textEmailAddress"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fabricTextInputLayout"
+        style="@style/AppTheme.BPayCustomTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/updatefabricaEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fabricante"
+            android:inputType="textEmailAddress"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cantidadtextInputLayout"
+        style="@style/AppTheme.BPayCustomTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fabricTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/updatecantidadDosisTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cantidad de dosis"
+            android:inputType="number"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/canttextInputLayout"
+        style="@style/AppTheme.BPayCustomTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cantidadtextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/updatecantidadDiasDosisTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cantidad de dias entre dosis"
+            android:inputType="number"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loginButtonCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <Button
+            android:id="@+id/updateloginButton"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:text="Actualizar"
+            app:layout_constraintCircleRadius="20dp" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

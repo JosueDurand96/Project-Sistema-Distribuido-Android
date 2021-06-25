@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -83,8 +84,18 @@ class VaccinationFragment : BaseFragment() {
 
         vaccinationAdapter.setListenerItemSelected(object :
             VaccinationAdapter.OnClickSelectedPedidosPendientes {
-            override fun onSelectPedidosPendientes(id: Int?, name: String) {
-
+            override fun onSelectPedidosPendientes(
+                id: Int?,
+                name: String,
+                fabrica: String,
+                cantidadDosis: Int,
+                cantidadDias: Int
+            ) {
+                val bundle = bundleOf("id" to id, "name" to name, "fabrica" to fabrica, "cantidadDosis" to cantidadDosis, "cantidadDias" to cantidadDias)
+                findNavController().navigate(
+                    R.id.action_nav_vaccination_to_nav_vacci_update,
+                    bundle
+                )
             }
         })
     }

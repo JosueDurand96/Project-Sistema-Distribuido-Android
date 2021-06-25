@@ -40,8 +40,12 @@ class VaccinationAdapter(
         holder.nameTextView.text = listLine[position].s_nombre
         holder.onlickLinearLayout.setOnClickListener {
             mOnClickSelectedPedidosPendientes?.onSelectPedidosPendientes(
-                    listLine[position].id_vacuna,
-                    listLine[position].s_nombre!!
+                listLine[position].id_vacuna,
+                listLine[position].s_nombre!!,
+                listLine[position].s_fabricante!!,
+                listLine[position].qt_dosis!!,
+                listLine[position].qt_dias!!
+
             )
         }
 
@@ -59,7 +63,13 @@ class VaccinationAdapter(
     }
 
     interface OnClickSelectedPedidosPendientes {
-        fun onSelectPedidosPendientes(id: Int?, name: String)
+        fun onSelectPedidosPendientes(
+            id: Int?,
+            name: String,
+            fabrica: String,
+            cantidadDosis: Int,
+            cantidadDias: Int
+        )
     }
 
 }

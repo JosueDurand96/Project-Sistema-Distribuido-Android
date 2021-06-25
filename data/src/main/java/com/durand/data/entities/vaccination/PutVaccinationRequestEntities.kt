@@ -3,7 +3,10 @@ package com.durand.data.entities.vaccination
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class VaccinationRequestEntities(
+
+data class PutVaccinationRequestEntities(
+    @SerializedName("id_vacuna")
+    var id_vacuna: Int? = null,
     @SerializedName("s_nombre")
     var s_nombre: String? = null,
     @SerializedName("s_fabricante")

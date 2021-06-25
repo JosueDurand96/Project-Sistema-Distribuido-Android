@@ -12,6 +12,7 @@ import com.durand.vacunacionperu.ui.campaign.CampaignViewModel
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.VaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.add.AddVaccinationViewModel
+import com.durand.vacunacionperu.ui.vaccination.update.UpdateVaccinationViewModel
 import com.google.gson.Gson
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
@@ -29,6 +30,11 @@ val applicationModule = module {
     single { PostVaccinationUseCase(get()) }
     single<PostVaccinationRepository> { PostVaccinationRepositoryImpl() }
     viewModel { AddVaccinationViewModel() }
+
+    //vaccination put
+    single { PutVaccinationUseCase(get()) }
+    single<PutVaccinationRepository> { PutVaccinationRepositoryImpl() }
+    viewModel { UpdateVaccinationViewModel() }
 
     //local vaccination get
     single { GetLocalVaccinationUseCase(get()) }
