@@ -4,6 +4,7 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.durand.domain.model.vaccination.VaccinationResponseModel
@@ -37,18 +38,19 @@ class VaccinationAdapter(
 
         holder.fabricTextView.text = listLine[position].s_fabricante
         holder.nameTextView.text = listLine[position].s_nombre
-//        holder.buttonConstraintLayout.setOnClickListener {
-//            mOnClickSelectedPedidosPendientes?.onSelectPedidosPendientes(
-//                    listLine[position].id,
-//                    listLine[position].title!!
-//            )
-//        }
+        holder.onlickLinearLayout.setOnClickListener {
+            mOnClickSelectedPedidosPendientes?.onSelectPedidosPendientes(
+                    listLine[position].id_vacuna,
+                    listLine[position].s_nombre!!
+            )
+        }
 
     }
 
     class LineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
         var fabricTextView: TextView = itemView.findViewById(R.id.fabricTextView)
+        var onlickLinearLayout: LinearLayout = itemView.findViewById(R.id.onlickLinearLayout)
 
     }
 

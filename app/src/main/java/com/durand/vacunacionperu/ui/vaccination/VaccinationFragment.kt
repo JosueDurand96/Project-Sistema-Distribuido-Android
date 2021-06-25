@@ -6,17 +6,21 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.durand.domain.model.vaccination.VaccinationResponseModel
 import com.durand.helper.base.BaseFragment
 import com.durand.vacunacionperu.R
+import com.durand.vacunacionperu.ui.vaccination.add.AddVaccinationFragment
 import com.durand.vacunacionperu.util.ScreenState
 import kotlinx.android.synthetic.main.fragment_vaccination.*
+
 
 class VaccinationFragment : BaseFragment() {
 
@@ -32,10 +36,8 @@ class VaccinationFragment : BaseFragment() {
         vaccinationViewModel = ViewModelProvider(this).get(VaccinationViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_vaccination, container, false)
         vaccinationRecyclerView = root.findViewById(R.id.vaccinationRecyclerView)
-//        val textView: TextView = root.findViewById(R.id.text_slideshow)
-//        vaccinationViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
+
+
         return root
     }
 
@@ -45,7 +47,7 @@ class VaccinationFragment : BaseFragment() {
         vaccinationViewModel.state.observe(::getLifecycle, ::getVaccination)
     }
 
-    private fun initGetVaccination(){
+    private fun initGetVaccination() {
         vaccinationProgressBar.visibility = View.VISIBLE
         vaccinationViewModel.getVaccination()
     }
@@ -60,13 +62,11 @@ class VaccinationFragment : BaseFragment() {
     private fun registerProcessRenderState(renderState: VaccinationState) {
         when (renderState) {
             is VaccinationState.ShowSuccess -> {
-                Log.d("josuecitoxd", "ShowSuccess: ${renderState.reg[0].s_nombre}")
                 vaccinationProgressBar.visibility = View.GONE
                 vaccinationList(renderState.reg)
             }
             is VaccinationState.ShowError -> {
 
-                Log.d("josuecitoxd", "error: " + renderState.reg.message)
             }
         }
     }
@@ -74,6 +74,14 @@ class VaccinationFragment : BaseFragment() {
     private fun vaccinationList(list: List<VaccinationResponseModel>) {
         vaccinationAdapter = VaccinationAdapter(context as Activity, list)
         vaccinationRecyclerView.adapter = vaccinationAdapter
-        vaccinationRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        vaccinationRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        vaccinationAdapter.setListenerItemSelected(object :
+            VaccinationAdapter.OnClickSelectedPedidosPendientes {
+            override fun onSelectPedidosPendientes(id: Int?, name: String) {
+                findNavController().navigate(R.id.action_nav_vaccination_to_nav_vaccinwation)
+            }
+        })
     }
 }
