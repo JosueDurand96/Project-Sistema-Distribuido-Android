@@ -4,8 +4,9 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.durand.domain.model.vaccination.VaccinationResponseModel
 import com.durand.vacunacionperu.R
@@ -21,7 +22,7 @@ class VaccinationAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LineViewHolder {
         return LineViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_vaccination,
+                R.layout.item_vaccination_list,
                 parent,
                 false
             )
@@ -33,7 +34,7 @@ class VaccinationAdapter(
     }
 
     private var mOnClickSelectedPedidosPendientes: OnClickSelectedPedidosPendientes? = null
-
+    private var mOnClickSelectedDelete: OnClickSelectedDelete? = null
     override fun onBindViewHolder(holder: LineViewHolder, position: Int) {
 
         holder.fabricTextView.text = listLine[position].s_fabricante
@@ -49,18 +50,30 @@ class VaccinationAdapter(
             )
         }
 
+        holder.imageDeleteImageView.setOnClickListener {
+            mOnClickSelectedDelete?.onSelectDelete(
+                listLine[position].id_vacuna
+            )
+        }
+
     }
 
     class LineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
         var fabricTextView: TextView = itemView.findViewById(R.id.fabricTextView)
-        var onlickLinearLayout: LinearLayout = itemView.findViewById(R.id.onlickLinearLayout)
-
+        var onlickLinearLayout: ConstraintLayout =
+            itemView.findViewById(R.id.onlickConstraintLayout)
+        var imageDeleteImageView: ImageView = itemView.findViewById(R.id.imageDeleteImageView)
     }
 
     fun setListenerItemSelected(setOnClickSelectedPedidosPendientes: OnClickSelectedPedidosPendientes) {
         mOnClickSelectedPedidosPendientes = setOnClickSelectedPedidosPendientes
     }
+
+    fun setListenerItemDelete(setOnClickSelectedDelete: OnClickSelectedDelete) {
+        mOnClickSelectedDelete = setOnClickSelectedDelete
+    }
+
 
     interface OnClickSelectedPedidosPendientes {
         fun onSelectPedidosPendientes(
@@ -69,6 +82,12 @@ class VaccinationAdapter(
             fabrica: String,
             cantidadDosis: Int,
             cantidadDias: Int
+        )
+    }
+
+    interface OnClickSelectedDelete {
+        fun onSelectDelete(
+            id: Int?
         )
     }
 

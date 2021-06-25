@@ -10,6 +10,7 @@ import com.durand.domain.usecases.*
 import com.durand.vacunacionperu.ui.advance_vaccination.AdvanceVaccinationViewModel
 import com.durand.vacunacionperu.ui.campaign.CampaignViewModel
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
+import com.durand.vacunacionperu.ui.vaccination.DeleteVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.VaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.add.AddVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.update.UpdateVaccinationViewModel
@@ -35,6 +36,11 @@ val applicationModule = module {
     single { PutVaccinationUseCase(get()) }
     single<PutVaccinationRepository> { PutVaccinationRepositoryImpl() }
     viewModel { UpdateVaccinationViewModel() }
+
+    //vaccination delete
+    single { DeleteVaccinationUseCase(get()) }
+    single<DeleteVaccinationRepository> { DeleteVaccinationRepositoryImpl() }
+    viewModel { DeleteVaccinationViewModel() }
 
     //local vaccination get
     single { GetLocalVaccinationUseCase(get()) }
