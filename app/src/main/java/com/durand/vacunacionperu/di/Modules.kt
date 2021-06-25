@@ -4,12 +4,16 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.os.Build
+import com.durand.data.implements.CampaignRepositoryImpl
 import com.durand.data.implements.LocalVaccinationRepositoryImpl
 import com.durand.data.implements.VaccinationRepositoryImpl
+import com.durand.domain.repositories.CampaignRepository
 import com.durand.domain.repositories.LocalVaccinationRepository
 import com.durand.domain.repositories.VaccinationRepository
+import com.durand.domain.usecases.GetCampaignUseCase
 import com.durand.domain.usecases.GetLocalVaccinationUseCase
 import com.durand.domain.usecases.GetVaccinationUseCase
+import com.durand.vacunacionperu.ui.campaign.CampaignViewModel
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.VaccinationViewModel
 import com.google.gson.Gson
@@ -30,4 +34,8 @@ val applicationModule = module {
     single<LocalVaccinationRepository> { LocalVaccinationRepositoryImpl() }
     viewModel { LocalVaccinationViewModel() }
 
+    //Campaign
+    single { GetCampaignUseCase(get()) }
+    single<CampaignRepository> { CampaignRepositoryImpl() }
+    viewModel { CampaignViewModel() }
 }

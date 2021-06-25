@@ -24,7 +24,6 @@ import kotlinx.android.synthetic.main.fragment_vaccination.*
 class LocalVaccinationFragment : Fragment() {
 
     private lateinit var localVaccinationViewModel: LocalVaccinationViewModel
-
     private lateinit var vaccinationAdapter: LocalVaccinationAdapter
     private lateinit var vaccinationRecyclerView: RecyclerView
 
@@ -40,14 +39,11 @@ class LocalVaccinationFragment : Fragment() {
         return root
     }
 
-    override fun onStart() {
-        super.onStart()
-        initGetVaccination()
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         localVaccinationViewModel.state.observe(::getLifecycle, ::getVaccination)
+        initGetVaccination()
     }
 
     private fun initGetVaccination(){
@@ -68,7 +64,6 @@ class LocalVaccinationFragment : Fragment() {
                 vaccinationList(renderState.reg)
             }
             is LocalVaccinationState.ShowError -> {
-
                 Log.d("josuecitoxd", "error: " + renderState.reg.message)
             }
         }
@@ -78,7 +73,5 @@ class LocalVaccinationFragment : Fragment() {
         vaccinationAdapter = LocalVaccinationAdapter(context as Activity, list)
         vaccinationRecyclerView.adapter = vaccinationAdapter
         vaccinationRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
-
     }
 }

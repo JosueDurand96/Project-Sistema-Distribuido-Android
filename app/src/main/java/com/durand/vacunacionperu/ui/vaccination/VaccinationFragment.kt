@@ -29,8 +29,7 @@ class VaccinationFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        vaccinationViewModel =
-            ViewModelProvider(this).get(VaccinationViewModel::class.java)
+        vaccinationViewModel = ViewModelProvider(this).get(VaccinationViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_vaccination, container, false)
         vaccinationRecyclerView = root.findViewById(R.id.vaccinationRecyclerView)
 //        val textView: TextView = root.findViewById(R.id.text_slideshow)
@@ -45,6 +44,7 @@ class VaccinationFragment : BaseFragment() {
         initGetVaccination()
         vaccinationViewModel.state.observe(::getLifecycle, ::getVaccination)
     }
+
     private fun initGetVaccination(){
         vaccinationProgressBar.visibility = View.VISIBLE
         vaccinationViewModel.getVaccination()
@@ -75,7 +75,5 @@ class VaccinationFragment : BaseFragment() {
         vaccinationAdapter = VaccinationAdapter(context as Activity, list)
         vaccinationRecyclerView.adapter = vaccinationAdapter
         vaccinationRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
-
     }
 }
