@@ -12,6 +12,7 @@ import android.widget.RelativeLayout
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.addCallback
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.app.SharedElementCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -96,11 +97,12 @@ class AddVaccinationFragment : BaseFragment() {
         }
     }
 
+
     private fun finish() {
         val duration_splash = 1500
         Handler().postDelayed({
 
-            findNavController().navigate(R.id.nav_vaccination)
+            findNavController().navigate(R.id.nav_advance_vaccination)
 
         }, duration_splash.toLong())
 

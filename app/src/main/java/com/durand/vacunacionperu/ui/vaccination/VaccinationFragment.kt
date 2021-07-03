@@ -68,7 +68,7 @@ class VaccinationFragment : BaseFragment() {
         when (renderState) {
             is AddVaccinationState.ShowSuccess -> {
 
-                Snackbar.make(mroot!!, "Eliminado correctament!", Snackbar.LENGTH_SHORT)
+                Snackbar.make(mroot!!, "Eliminado correctamente!", Snackbar.LENGTH_SHORT)
                     .setBackgroundTint(Color.BLUE).show()
                 finish()
             }
@@ -135,6 +135,7 @@ class VaccinationFragment : BaseFragment() {
                     "cantidadDosis" to cantidadDosis,
                     "cantidadDias" to cantidadDias
                 )
+
                 findNavController().navigate(
                     R.id.action_nav_vaccination_to_nav_vacci_update,
                     bundle

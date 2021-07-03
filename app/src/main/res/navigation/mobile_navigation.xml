@@ -21,27 +21,6 @@
         android:name="com.durand.vacunacionperu.ui.vaccination.update.UpdateVaccinationFragment"
         android:label="@string/vacunas"
         tools:layout="@layout/update_vaccination_fragment" />
-
-    <fragment
-        android:id="@+id/nav_vaccination"
-        android:name="com.durand.vacunacionperu.ui.vaccination.VaccinationFragment"
-        android:label="@string/vacunas"
-        tools:layout="@layout/fragment_vaccination" >
-
-
-        <action
-            android:id="@+id/action_nav_vaccination_to_nav_vaccinwation"
-            app:popUpToInclusive="true"
-            android:label="@string/vacunas"
-            app:popUpTo="@+id/nav_vaccination"
-            app:destination="@id/nav_vaccinwation" />
-        <action
-            android:id="@+id/action_nav_vaccination_to_nav_vacci_update"
-            app:popUpToInclusive="true"
-            android:label="@string/vacunas"
-            app:popUpTo="@+id/nav_vaccination"
-            app:destination="@id/nav_vacci_update" />
-    </fragment>
     <fragment
         android:id="@+id/nav_vaccinwation"
         android:name="com.durand.vacunacionperu.ui.vaccination.add.AddVaccinationFragment"
@@ -49,10 +28,45 @@
         tools:layout="@layout/add_vaccination_fragment" />
 
     <fragment
+        android:id="@+id/nav_vaccination"
+        android:name="com.durand.vacunacionperu.ui.vaccination.VaccinationFragment"
+        android:label="@string/vacunas"
+        tools:layout="@layout/fragment_vaccination" >
+
+        <action
+            android:id="@+id/action_nav_vaccination_to_nav_vaccinwation"
+            app:popUpToInclusive="false"
+            android:label="@string/vacunas"
+            app:popUpTo="@+id/nav_vaccination"
+            app:destination="@id/nav_vaccinwation" />
+        <action
+            android:id="@+id/action_nav_vaccination_to_nav_vacci_update"
+            app:popUpToInclusive="false"
+            android:label="@string/vacunas"
+            app:popUpTo="@+id/nav_vaccination"
+            app:destination="@id/nav_vacci_update" />
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_campaign"
         android:name="com.durand.vacunacionperu.ui.campaign.CampaignFragment"
         android:label="@string/campa_as"
-        tools:layout="@layout/fragment_campaign" />
+        tools:layout="@layout/fragment_campaign" >
+
+        <action
+            android:id="@+id/add_campaign_fragments"
+            app:popUpToInclusive="false"
+            app:popUpTo="@+id/nav_campaign"
+            app:destination="@id/nav_add_campaign" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_add_campaign"
+        android:name="com.durand.vacunacionperu.ui.campaign.add.AddCampaignFragment"
+        android:label="@string/campa_as"
+        tools:layout="@layout/add_campaign_fragment" />
+
     <fragment
         android:id="@+id/nav_advance_vaccination"
         android:name="com.durand.vacunacionperu.ui.advance_vaccination.AdvanceVaccinationFragment"
