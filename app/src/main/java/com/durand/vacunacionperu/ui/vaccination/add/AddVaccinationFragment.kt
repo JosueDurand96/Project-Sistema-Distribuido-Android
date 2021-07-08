@@ -102,7 +102,7 @@ class AddVaccinationFragment : BaseFragment() {
         val duration_splash = 1500
         Handler().postDelayed({
 
-            findNavController().navigate(R.id.nav_advance_vaccination)
+            findNavController().navigate(R.id.nav_vaccination)
 
         }, duration_splash.toLong())
 
