@@ -35,7 +35,8 @@ class MenuActivity : AppCompatActivity() {
                 R.id.nav_local_vaccination,
                 R.id.nav_vaccination,
                 R.id.nav_campaign,
-                R.id.nav_advance_vaccination
+                R.id.nav_advance_vaccination,
+                R.id.nav_consulta
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

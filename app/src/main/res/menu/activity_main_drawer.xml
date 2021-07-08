@@ -24,5 +24,10 @@
             android:id="@+id/nav_advance_vaccination"
             android:icon="@drawable/ic_baseline_assistant_24"
             android:title="@string/avance_de_vacunaci_n" />
+
+        <item
+            android:id="@+id/nav_consulta"
+            android:icon="@drawable/ic_baseline_chrome_reader_mode_24"
+            android:title="@string/consulta_dni" />
     </group>
 </menu>
