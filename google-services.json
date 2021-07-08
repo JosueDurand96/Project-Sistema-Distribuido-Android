@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "569231715396",
+    "project_id": "vacunaapp-9aece",
+    "storage_bucket": "vacunaapp-9aece.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569231715396:android:8d3d87a2deedfc0b03e011",
+        "android_client_info": {
+          "package_name": "com.durand.vacunacionperu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569231715396-d5jhs61t2801u645g5a0an91mdha4j4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.durand.vacunacionperu",
+            "certificate_hash": "d29addb84044f27c6247c3f4f3e324d3e8743f54"
+          }
+        },
+        {
+          "client_id": "569231715396-b3emdkab49mqp0pegqscid1f7u3a6ljk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr4-d98K3cGtvbV92UnMEVQ92xKhbfl4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569231715396-b3emdkab49mqp0pegqscid1f7u3a6ljk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

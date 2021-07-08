@@ -1,6 +1,5 @@
 package com.durand.vacunacionperu.ui.vaccination.add
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -8,18 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.RelativeLayout
-import androidx.activity.OnBackPressedDispatcher
-import androidx.activity.addCallback
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.app.SharedElementCallback
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.durand.domain.request.VaccinationRequest
 import com.durand.helper.base.BaseFragment
 import com.durand.vacunacionperu.R
-import com.durand.vacunacionperu.ui.init.LoginActivity
 import com.durand.vacunacionperu.util.ScreenState
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
