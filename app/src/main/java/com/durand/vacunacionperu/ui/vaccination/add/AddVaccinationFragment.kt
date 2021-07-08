@@ -106,8 +106,6 @@ class AddVaccinationFragment : BaseFragment() {
 
         }, duration_splash.toLong())
 
-
     }
-
 
 }
