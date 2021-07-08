@@ -45,7 +45,6 @@ class CampaignFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initGetVaccination()
         campaignProgressBar.visibility = View.VISIBLE
         campaignViewModel.getCampaign()
         campaignViewModel.state.observe(::getLifecycle, ::getVaccination)
@@ -54,9 +53,7 @@ class CampaignFragment : BaseFragment() {
         }
     }
 
-    private fun initGetVaccination() {
 
-    }
 
 
     private fun getVaccination(screenState: ScreenState<CampaignState>) {

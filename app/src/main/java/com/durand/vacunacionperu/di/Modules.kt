@@ -9,6 +9,7 @@ import com.durand.domain.repositories.*
 import com.durand.domain.usecases.*
 import com.durand.vacunacionperu.ui.advance_vaccination.AdvanceVaccinationViewModel
 import com.durand.vacunacionperu.ui.campaign.CampaignViewModel
+import com.durand.vacunacionperu.ui.consulta.ConsultaDniViewModel
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.DeleteVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.VaccinationViewModel
@@ -56,4 +57,9 @@ val applicationModule = module {
     single { GetAdvanceVaccinationUseCase(get()) }
     single<AdvanceVaccinationRepository> { AdvanceVaccinationRepositoryImpl() }
     viewModel { AdvanceVaccinationViewModel() }
+
+    //API externa fragment
+    single { GetConsultaDniUseCase(get()) }
+    single<ConsultaRepository> { ConsultaRepositoryImpl() }
+    viewModel { ConsultaDniViewModel() }
 }
