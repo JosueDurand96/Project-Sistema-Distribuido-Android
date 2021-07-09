@@ -8,7 +8,7 @@ import android.os.Handler
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_splash)
         //TIMER
         val duration_splash = 3000
         Handler().postDelayed({
