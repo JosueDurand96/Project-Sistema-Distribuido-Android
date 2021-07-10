@@ -25,14 +25,14 @@ class AddVaccinationFragment : BaseFragment() {
     private lateinit var fabricaEditText: TextInputEditText
     private lateinit var nameEditText: TextInputEditText
     private lateinit var loginButton: Button
-    private lateinit var addVaccinationViewModel: AddVaccinationViewModel
+    private lateinit var addVaccinationViewModel: PostVaccinationViewModel
     private lateinit var mRoot: ConstraintLayout
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        addVaccinationViewModel = ViewModelProvider(this).get(AddVaccinationViewModel::class.java)
+        addVaccinationViewModel = ViewModelProvider(this).get(PostVaccinationViewModel::class.java)
         val root = inflater.inflate(R.layout.add_vaccination_fragment, container, false)
         addVaccinationViewModel.state.observe(::getLifecycle, ::getVaccination)
         cantidadDiasDosisTextInputEditText =

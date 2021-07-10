@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,11 +12,9 @@ import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.durand.domain.request.PutVaccinationRequest
-import com.durand.domain.request.VaccinationRequest
 import com.durand.helper.base.BaseFragment
 import com.durand.vacunacionperu.R
 import com.durand.vacunacionperu.ui.vaccination.add.AddVaccinationState
-import com.durand.vacunacionperu.ui.vaccination.add.AddVaccinationViewModel
 import com.durand.vacunacionperu.util.ScreenState
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText

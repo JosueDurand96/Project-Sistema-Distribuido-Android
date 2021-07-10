@@ -1,25 +1,19 @@
 package com.durand.vacunacionperu.di
 
-import android.content.Context
-import android.content.SharedPreferences
-import android.net.ConnectivityManager
-import android.os.Build
 import com.durand.data.implements.*
 import com.durand.domain.repositories.*
 import com.durand.domain.usecases.*
 import com.durand.vacunacionperu.ui.advance_vaccination.AdvanceVaccinationViewModel
 import com.durand.vacunacionperu.ui.campaign.CampaignViewModel
+import com.durand.vacunacionperu.ui.campaign.add.PostCampaignViewModel
 import com.durand.vacunacionperu.ui.consulta.ConsultaDniViewModel
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.DeleteVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.VaccinationViewModel
-import com.durand.vacunacionperu.ui.vaccination.add.AddVaccinationViewModel
+import com.durand.vacunacionperu.ui.vaccination.add.PostVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.update.UpdateVaccinationViewModel
-import com.google.gson.Gson
-import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import retrofit2.Retrofit
 
 val applicationModule = module {
 
@@ -31,7 +25,7 @@ val applicationModule = module {
     //vaccination post
     single { PostVaccinationUseCase(get()) }
     single<PostVaccinationRepository> { PostVaccinationRepositoryImpl() }
-    viewModel { AddVaccinationViewModel() }
+    viewModel { PostVaccinationViewModel() }
 
     //vaccination put
     single { PutVaccinationUseCase(get()) }
@@ -52,6 +46,10 @@ val applicationModule = module {
     single { GetCampaignUseCase(get()) }
     single<CampaignRepository> { CampaignRepositoryImpl() }
     viewModel { CampaignViewModel() }
+    //Campaign post
+    single { PostCampaignUseCase(get()) }
+    single<PostCampaignRepository> { PostCampaignRepositoryImpl() }
+    viewModel { PostCampaignViewModel() }
 
     //AdvanceVaccination get
     single { GetAdvanceVaccinationUseCase(get()) }

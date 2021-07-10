@@ -6,17 +6,21 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.durand.domain.model.local_vaccination.LocalVaccinationResponseModel
 import com.durand.domain.model.vaccination.VaccinationResponseModel
+import com.durand.domain.request.CampaignRequest
 import com.durand.vacunacionperu.R
 import com.durand.vacunacionperu.ui.campaign.add.popup.LocalVacunacionPopupAdapter
 import com.durand.vacunacionperu.ui.campaign.add.popup.VacunacionPopupAdapter
@@ -25,6 +29,7 @@ import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.VaccinationState
 import com.durand.vacunacionperu.ui.vaccination.VaccinationViewModel
 import com.durand.vacunacionperu.util.ScreenState
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.add_campaign_fragment.*
 import kotlinx.android.synthetic.main.fragment_vaccination.*
 import java.util.*
@@ -38,7 +43,10 @@ class AddCampaignFragment : Fragment() {
     var dialog2: Dialog? = null
     private lateinit var favoritesPopupAdapter: LocalVacunacionPopupAdapter
     private lateinit var vacunacionPopupAdapter: VacunacionPopupAdapter
-
+    private lateinit var postCampaignViewModel: PostCampaignViewModel
+    private var id_vacuna: Int? = null
+    private var id_local: Int? = null
+    private lateinit var mroot: ConstraintLayout
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,9 +55,11 @@ class AddCampaignFragment : Fragment() {
         localVaccinationViewModel =
             ViewModelProvider(this).get(LocalVaccinationViewModel::class.java)
         vaccinationViewModel = ViewModelProvider(this).get(VaccinationViewModel::class.java)
+        postCampaignViewModel = ViewModelProvider(this).get(PostCampaignViewModel::class.java)
+
 
         val root = inflater.inflate(R.layout.add_campaign_fragment, container, false)
-
+        mroot = root.findViewById(R.id.addCampaignFragment)
         return root
     }
 
@@ -64,13 +74,15 @@ class AddCampaignFragment : Fragment() {
 
             val dpd = DatePickerDialog(requireContext(), { _, year, monthOfYear, dayOfMonth ->
                 // Display Selected date in TextView
-                dateTextInputEditText.setText("$dayOfMonth $monthOfYear, $year")
+
+                dateTextInputEditText.setText("$year-$monthOfYear-$dayOfMonth")
             }, year, month, day)
             dpd.show()
         }
         //local de vacunacion
         localVaccinationViewModel.state.observe(::getLifecycle, ::getLocalVaccination)
         vaccinationViewModel.state.observe(::getLifecycle, ::getVaccination)
+        postCampaignViewModel.state.observe(::getLifecycle, ::postCampaign)
 
         localVacunacionTextView.setOnClickListener {
             localVaccinationViewModel.getVaccination()
@@ -78,10 +90,49 @@ class AddCampaignFragment : Fragment() {
         vacunacionTextView.setOnClickListener {
             vaccinationViewModel.getVaccination()
         }
-
+        campanaButton.setOnClickListener {
+            postCampaignViewModel.postCampaign(
+                CampaignRequest(
+                    nameEditText.text.toString(),
+                    dateTextInputEditText.text.toString(),
+                    id_vacuna,
+                    id_local,
+                    cantidadAplicacionEditText.text.toString().toInt(),
+                    false,
+                    "medico@sistema.pe"
+                )
+            )
+        }
 
     }
 
+    private fun postCampaign(screenState: ScreenState<PostCampaignState>) {
+        when (screenState) {
+            is ScreenState.Render -> postProcessRenderState(screenState.renderState)
+        }
+    }
+
+    private fun postProcessRenderState(renderState: PostCampaignState) {
+        when (renderState) {
+            is PostCampaignState.ShowSuccess -> {
+                Snackbar.make(mroot!!, "Agregado correctamente!", Snackbar.LENGTH_SHORT)
+                    .setBackgroundTint(Color.GREEN).show()
+                finish()
+            }
+            is PostCampaignState.ShowError -> {
+            }
+        }
+    }
+
+    private fun finish() {
+        val duration_splash = 1500
+        Handler().postDelayed({
+
+            findNavController().navigate(R.id.nav_campaign)
+
+        }, duration_splash.toLong())
+
+    }
 
     private fun getVaccination(screenState: ScreenState<VaccinationState>) {
         when (screenState) {
@@ -97,14 +148,14 @@ class AddCampaignFragment : Fragment() {
 
             }
             is VaccinationState.ShowError -> {
-
             }
         }
     }
 
     private fun vaccinationList(list: List<VaccinationResponseModel>) {
         dialog2!!.setContentView(R.layout.popup_favorites_custom2)
-        val popupFavoritesRecyclerView = dialog2!!.findViewById<View>(R.id.popupFavoritesRecyclerView) as RecyclerView
+        val popupFavoritesRecyclerView =
+            dialog2!!.findViewById<View>(R.id.popupFavoritesRecyclerView) as RecyclerView
         vacunacionPopupAdapter = VacunacionPopupAdapter(context as Activity, list)
         popupFavoritesRecyclerView.adapter = vacunacionPopupAdapter
         popupFavoritesRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -112,6 +163,7 @@ class AddCampaignFragment : Fragment() {
             VacunacionPopupAdapter.OnClickSelectedPedidosPendientes {
             override fun onSelectPedidosPendientes(codigo: Int, name: String) {
                 vacunacionTextView.text = name
+                id_vacuna = codigo
                 dialog2!!.dismiss()
             }
         })
@@ -158,6 +210,7 @@ class AddCampaignFragment : Fragment() {
             LocalVacunacionPopupAdapter.OnClickSelectedPedidosPendientes {
             override fun onSelectPedidosPendientes(codigo: Int, name: String) {
                 localVacunacionTextView.text = name
+                id_local = codigo
                 dialog!!.dismiss()
             }
         })

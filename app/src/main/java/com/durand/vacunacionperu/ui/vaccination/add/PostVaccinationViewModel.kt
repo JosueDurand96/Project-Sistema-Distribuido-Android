@@ -16,7 +16,7 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 import java.lang.Exception
 
-class AddVaccinationViewModel : ViewModel(), KoinComponent {
+class PostVaccinationViewModel : ViewModel(), KoinComponent {
 
     private val getProfessionsUseCase: PostVaccinationUseCase by inject()
 

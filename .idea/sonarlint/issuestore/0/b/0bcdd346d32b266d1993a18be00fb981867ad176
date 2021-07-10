@@ -1,0 +1,6 @@
+
+mkotlin:S117"QRename this parameter to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(§“î¶şÿÿÿÿ
+hkotlin:S117"QRename this parameter to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(…Áï
+mkotlin:S117"QRename this parameter to match the regular expression "^`?[_a-z][a-zA-Z0-9]*`?$".(Ì•½˜ùÿÿÿÿ
+|kotlin:S100"^Rename function "getLocalVacunacion_Id" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(ûóÅö8³÷ñ¨/
+‚kotlin:S100"dRename function "eliminarLocalVacunacion_1Id" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(Í€Äí8˜ô÷ñ¨/
