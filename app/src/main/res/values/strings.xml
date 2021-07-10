@@ -20,4 +20,6 @@
     <string name="locales_de_vacunaci_n2">Locales de vacunación</string>
     <string name="consulta_dni">Consulta Dni</string>
     <string name="title_activity_maps">Map</string>
+    <string name="seleccione_el_local_de_vacunaci_n">Seleccione el local de vacunación</string>
+    <string name="local_de_vacunacion">Local de vacunacion</string>
 </resources>

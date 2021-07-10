@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginTop="20dp"
-        android:text="Local de vacunacion"
+        android:text="@string/seleccione_el_local_de_vacunaci_n"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -88,6 +88,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:cardCornerRadius="5dp"
@@ -98,7 +99,7 @@
         <TextView
             android:id="@+id/localVacunacionTextView"
             android:layout_width="match_parent"
-            android:text="Seleccione el local de vacunación"
+            android:text="@string/local_de_vacunacion"
             android:textSize="20sp"
             android:layout_height="wrap_content"
             android:visibility="visible" />

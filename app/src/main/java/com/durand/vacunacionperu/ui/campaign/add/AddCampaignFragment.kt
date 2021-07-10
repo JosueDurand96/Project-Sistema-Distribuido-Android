@@ -10,27 +10,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.ArrayAdapter
 import android.widget.ImageView
-import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.durand.domain.model.local_vaccination.LocalVaccinationResponseModel
 import com.durand.vacunacionperu.R
-import com.durand.vacunacionperu.room.AppLocalDatabase
-import com.durand.vacunacionperu.room.LocalVacunacion
-import com.durand.vacunacionperu.room.LocalVacunacionDao
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationState
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
+import com.durand.vacunacionperu.ui.vaccination.VaccinationAdapter
 import com.durand.vacunacionperu.util.ScreenState
 import kotlinx.android.synthetic.main.add_campaign_fragment.*
-import kotlinx.android.synthetic.main.fragment_vaccination.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class AddCampaignFragment : Fragment() {
@@ -38,7 +30,7 @@ class AddCampaignFragment : Fragment() {
     private lateinit var localVaccinationViewModel: LocalVaccinationViewModel
     private lateinit var viewModel: AddCampaignViewModel
     var dialog: Dialog? = null
-    private lateinit var favoritesPopupAdapter:FavoritesPopupAdapter
+    private lateinit var favoritesPopupAdapter: LocalVacunacionPopupAdapter
 
 
     override fun onCreateView(
@@ -46,7 +38,8 @@ class AddCampaignFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewModel = ViewModelProvider(this).get(AddCampaignViewModel::class.java)
-        localVaccinationViewModel = ViewModelProvider(this).get(LocalVaccinationViewModel::class.java)
+        localVaccinationViewModel =
+            ViewModelProvider(this).get(LocalVaccinationViewModel::class.java)
 
         val root = inflater.inflate(R.layout.add_campaign_fragment, container, false)
 
@@ -79,8 +72,6 @@ class AddCampaignFragment : Fragment() {
     }
 
 
-
-
     private fun getLocalVaccination(screenState: ScreenState<LocalVaccinationState>) {
         when (screenState) {
             is ScreenState.Render -> registerProcessRenderState(screenState.renderState)
@@ -103,11 +94,18 @@ class AddCampaignFragment : Fragment() {
 
         dialog!!.setContentView(R.layout.popup_favorites_custom)
 
-        val popupFavoritesRecyclerView = dialog!!.findViewById<View>(R.id.popupFavoritesRecyclerView) as RecyclerView
-        favoritesPopupAdapter = FavoritesPopupAdapter(context as Activity, list)
+        val popupFavoritesRecyclerView =
+            dialog!!.findViewById<View>(R.id.popupFavoritesRecyclerView) as RecyclerView
+        favoritesPopupAdapter = LocalVacunacionPopupAdapter(context as Activity, list)
         popupFavoritesRecyclerView.adapter = favoritesPopupAdapter
         popupFavoritesRecyclerView.layoutManager = LinearLayoutManager(context)
-
+        favoritesPopupAdapter.setListenerItemSelectedLocal(object :
+            LocalVacunacionPopupAdapter.OnClickSelectedPedidosPendientes {
+            override fun onSelectPedidosPendientes(codigo: Int, name: String) {
+                localVacunacionTextView.text = name
+                dialog!!.dismiss()
+            }
+        })
 
         val cerrarPopup: ImageView = dialog!!.findViewById<View>(R.id.cerrarPopup) as ImageView
         cerrarPopup.setOnClickListener {

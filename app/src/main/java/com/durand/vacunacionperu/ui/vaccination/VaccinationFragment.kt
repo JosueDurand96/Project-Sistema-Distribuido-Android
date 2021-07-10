@@ -116,8 +116,7 @@ class VaccinationFragment : BaseFragment() {
     private fun vaccinationList(list: List<VaccinationResponseModel>) {
         vaccinationAdapter = VaccinationAdapter(context as Activity, list)
         vaccinationRecyclerView.adapter = vaccinationAdapter
-        vaccinationRecyclerView.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        vaccinationRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         vaccinationAdapter.setListenerItemSelected(object :
             VaccinationAdapter.OnClickSelectedPedidosPendientes {
             override fun onSelectPedidosPendientes(

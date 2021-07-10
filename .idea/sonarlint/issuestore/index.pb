@@ -9,16 +9,12 @@ X
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 C
 domain/build.gradle,a/3/a3021bb5ba623a461b5fdb89ae51923a4945c354
-Å
-Qapp/src/main/java/com/durand/vacunacionperu/ui/vaccination/VaccinationFragment.kt,d/4/d426f2b086a1a2d394fa0c9421c5ec69cc964581
 é
 ^app/src/main/java/com/durand/vacunacionperu/ui/vaccination/update/UpdateVaccinationFragment.kt,6/8/68bbd1c8a0b27a485c8984bc4eace3625e108211
 m
 =app/src/main/java/com/durand/vacunacionperu/SplashActivity.kt,7/6/7637bc9b112b1c7f2ee967ba343c410163672036
 l
 <app/src/main/java/com/durand/vacunacionperu/LoginActivity.kt,c/6/c688844f283d98cb9a0bfd6a35f6973a963a4490
-ã
-[app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationAdapter.kt,9/5/95b277ab7cb06aed04b8e7bc23843b32922f12b7
 ç
 ]app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationViewModel.kt,6/b/6b821a2c52778b236e41e5df51cd4974d06ea91f
 |
@@ -31,5 +27,3 @@ k
 ;helper/src/main/java/com/durand/helper/base/BaseFragment.kt,d/2/d2a6a7b7ae5c409fa43f6d9184a50f8039b81433
 É
 Sapp/src/main/java/com/durand/vacunacionperu/ui/campaign/add/AddCampaignViewModel.kt,e/0/e0d8ca167f5f8f28ce8aa902b7a2b4a20a150375
-å
-\app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationFragment.kt,f/9/f9472f57218e860aa07c50d123010afdef0f14c4
