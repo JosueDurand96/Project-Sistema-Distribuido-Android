@@ -7,11 +7,29 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 C
 domain/build.gradle,a/3/a3021bb5ba623a461b5fdb89ae51923a4945c354
 
 Qapp/src/main/java/com/durand/vacunacionperu/ui/vaccination/VaccinationFragment.kt,d/4/d426f2b086a1a2d394fa0c9421c5ec69cc964581
 Ž
 ^app/src/main/java/com/durand/vacunacionperu/ui/vaccination/update/UpdateVaccinationFragment.kt,6/8/68bbd1c8a0b27a485c8984bc4eace3625e108211
+m
+=app/src/main/java/com/durand/vacunacionperu/SplashActivity.kt,7/6/7637bc9b112b1c7f2ee967ba343c410163672036
+l
+<app/src/main/java/com/durand/vacunacionperu/LoginActivity.kt,c/6/c688844f283d98cb9a0bfd6a35f6973a963a4490
+‹
+[app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationAdapter.kt,9/5/95b277ab7cb06aed04b8e7bc23843b32922f12b7
+
+]app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationViewModel.kt,6/b/6b821a2c52778b236e41e5df51cd4974d06ea91f
+|
+Lapp/src/main/java/com/durand/vacunacionperu/ui/campaign/CampaignViewModel.kt,2/9/29e5974b883a5d339969862146fe5e16288376db
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+k
+;helper/src/main/java/com/durand/helper/base/BaseFragment.kt,d/2/d2a6a7b7ae5c409fa43f6d9184a50f8039b81433
+ƒ
+Sapp/src/main/java/com/durand/vacunacionperu/ui/campaign/add/AddCampaignViewModel.kt,e/0/e0d8ca167f5f8f28ce8aa902b7a2b4a20a150375
+Œ
+\app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationFragment.kt,f/9/f9472f57218e860aa07c50d123010afdef0f14c4
