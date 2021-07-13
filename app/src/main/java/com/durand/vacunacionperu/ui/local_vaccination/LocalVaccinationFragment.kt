@@ -6,36 +6,30 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.durand.domain.model.local_vaccination.LocalVaccinationResponseModel
-import com.durand.domain.model.vaccination.VaccinationResponseModel
+import com.durand.helper.base.BaseFragment
 import com.durand.vacunacionperu.R
-import com.durand.vacunacionperu.ui.vaccination.VaccinationAdapter
-import com.durand.vacunacionperu.ui.vaccination.VaccinationState
-import com.durand.vacunacionperu.ui.vaccination.VaccinationViewModel
 import com.durand.vacunacionperu.util.ScreenState
-import kotlinx.android.synthetic.main.fragment_vaccination.*
+import kotlinx.android.synthetic.main.fragment_local_vaccination.*
 
-class LocalVaccinationFragment : Fragment() {
+class LocalVaccinationFragment : BaseFragment() {
 
     private lateinit var localVaccinationViewModel: LocalVaccinationViewModel
     private lateinit var vaccinationAdapter: LocalVaccinationAdapter
-    private lateinit var vaccinationRecyclerView: RecyclerView
+    private lateinit var localVaccinationRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        localVaccinationViewModel =
-            ViewModelProvider(this).get(LocalVaccinationViewModel::class.java)
+        localVaccinationViewModel = ViewModelProvider(this).get(LocalVaccinationViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_local_vaccination, container, false)
-        vaccinationRecyclerView = root.findViewById(R.id.localVaccinationRecyclerView)
+        localVaccinationRecyclerView = root.findViewById(R.id.localVaccinationRecyclerView)
         return root
     }
 
@@ -47,7 +41,7 @@ class LocalVaccinationFragment : Fragment() {
     }
 
     private fun initGetVaccination(){
-        vaccinationProgressBar.visibility = View.VISIBLE
+         vaccinationLocalProgressBar.visibility = View.VISIBLE
         localVaccinationViewModel.getVaccination()
     }
     private fun getVaccination(screenState: ScreenState<LocalVaccinationState>) {
@@ -60,8 +54,8 @@ class LocalVaccinationFragment : Fragment() {
         when (renderState) {
             is LocalVaccinationState.ShowSuccess -> {
                 Log.d("josuecitoxd", "ShowSuccess: ${renderState.reg[0].s_nombre}")
-                vaccinationProgressBar.visibility = View.GONE
                 vaccinationList(renderState.reg)
+                vaccinationLocalProgressBar.visibility = View.GONE
             }
             is LocalVaccinationState.ShowError -> {
                 Log.d("josuecitoxd", "error: " + renderState.reg.message)
@@ -71,7 +65,8 @@ class LocalVaccinationFragment : Fragment() {
 
     private fun vaccinationList(list: List<LocalVaccinationResponseModel>) {
         vaccinationAdapter = LocalVaccinationAdapter(context as Activity, list)
-        vaccinationRecyclerView.adapter = vaccinationAdapter
-        vaccinationRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        localVaccinationRecyclerView.setHasFixedSize(true)
+        localVaccinationRecyclerView.adapter = vaccinationAdapter
+        localVaccinationRecyclerView.layoutManager = LinearLayoutManager(context)
     }
 }
