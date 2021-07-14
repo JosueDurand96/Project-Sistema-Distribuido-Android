@@ -5,6 +5,7 @@ import com.durand.domain.repositories.*
 import com.durand.domain.usecases.*
 import com.durand.vacunacionperu.ui.advance_vaccination.AdvanceVaccinationViewModel
 import com.durand.vacunacionperu.ui.campaign.CampaignViewModel
+import com.durand.vacunacionperu.ui.campaign.DeleteCampaignViewModel
 import com.durand.vacunacionperu.ui.campaign.add.PostCampaignViewModel
 import com.durand.vacunacionperu.ui.consulta.ConsultaDniViewModel
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
@@ -50,6 +51,10 @@ val applicationModule = module {
     single { PostCampaignUseCase(get()) }
     single<PostCampaignRepository> { PostCampaignRepositoryImpl() }
     viewModel { PostCampaignViewModel() }
+    //vaccination delete
+    single { DeleteCampaignUseCase(get()) }
+    single<DeleteCampaignRepository> { DeleteCampaignRepositoryImpl() }
+    viewModel { DeleteCampaignViewModel() }
 
     //AdvanceVaccination get
     single { GetAdvanceVaccinationUseCase(get()) }

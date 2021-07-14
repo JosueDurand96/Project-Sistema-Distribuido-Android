@@ -28,7 +28,7 @@ object CampaignMapper {
 
     fun transformListCard2(cardDataResponse: CampaignResponseEntities): CampaignResponseModel {
         val cardDataModel = CampaignResponseModel()
-        cardDataModel.id_local = cardDataResponse.id_local
+        cardDataModel.id_campana = cardDataResponse.id_campana
         cardDataModel.s_nombre = cardDataResponse.s_nombre
         cardDataModel.d_fec_inicio = cardDataResponse.d_fec_inicio
         cardDataModel.id_vacuna = cardDataResponse.id_vacuna

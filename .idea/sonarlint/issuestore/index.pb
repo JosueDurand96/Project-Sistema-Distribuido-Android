@@ -29,8 +29,6 @@ v
 Fapp/src/main/java/com/durand/vacunacionperu/room/LocalVacunacionDao.kt,0/b/0bcdd346d32b266d1993a18be00fb981867ad176
 â
 Yapp/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationState.kt,8/b/8bb3bcf548a1cf48a05de8f0c23d8aa970648e04
-Ä
-Papp/src/main/java/com/durand/vacunacionperu/ui/vaccination/VaccinationAdapter.kt,2/b/2b512d8b0526ff605fe121cfb589d46f8e26b8fe
 Ñ
 Tdomain/src/main/java/com/durand/domain/model/vaccination/VaccinationResponseModel.kt,d/4/d4576f16815c74714925663ec85cd0dcbbbdbdb5
 ã
@@ -67,8 +65,6 @@ Tapp/src/main/java/com/durand/vacunacionperu/ui/campaign/add/PostCampaignViewMod
 Zapp/src/main/java/com/durand/vacunacionperu/ui/vaccination/add/PostVaccinationViewModel.kt,9/8/98ef398b4f92b3d8c20b9d90c83f3d39d9a3697a
 Ö
 Uapp/src/main/java/com/durand/vacunacionperu/ui/vaccination/add/AddVaccinationState.kt,a/f/afa80819489720821f7747bd87875f895d813ed5
-Å
-Qapp/src/main/java/com/durand/vacunacionperu/ui/vaccination/VaccinationFragment.kt,d/4/d426f2b086a1a2d394fa0c9421c5ec69cc964581
 à
 Xapp/src/main/java/com/durand/vacunacionperu/ui/vaccination/add/AddVaccinationFragment.kt,c/8/c8df69ceb2ab0158e144f08bcd3487d0b8015178
 q
@@ -77,8 +73,6 @@ Adomain/src/main/java/com/durand/domain/request/CampaignRequest.kt,c/9/c9d64c68
 Odata/src/main/java/com/durand/data/mapper/campaign/PostCampaignRequestMapper.kt,3/e/3e4b51945554bbf75eff4aaf30701a47c438cf69
 ç
 ]app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationViewModel.kt,6/b/6b821a2c52778b236e41e5df51cd4974d06ea91f
-i
-9app/src/main/java/com/durand/vacunacionperu/di/Modules.kt,e/9/e93abcd69857e56a711e91a6f271f09b84a7d35e
 ã
 [app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationAdapter.kt,9/5/95b277ab7cb06aed04b8e7bc23843b32922f12b7
 É
