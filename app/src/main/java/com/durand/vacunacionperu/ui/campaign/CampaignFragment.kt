@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -132,11 +133,31 @@ class CampaignFragment : BaseFragment() {
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         campaignAdapter.setListenerItemSelected(object :
             CampaignAdapter.OnClickSelectedPedidosPendientes {
-            override fun onSelectPedidosPendientes(id: Int?, name: String) {
+            override fun onSelectPedidosPendientes(
+                id_campana: Int?,
+                id_vacuna: Int,
+                id_local: Int) {
+                val bundle = bundleOf(
+                    "id_campana" to id_campana,
+                    "id_vacuna" to id_vacuna,
+                    "id_local" to id_local
+                )
+
+                findNavController().navigate(
+                    R.id.action_nav_campaign_to_nav_update_campaign,
+                    bundle
+                )
+
+            } })
+
+        campaignAdapter.setListenerItemDelete(object :CampaignAdapter.OnClickSelectedDelete{
+            override fun onSelectDelete(id: Int?) {
                 deleteCampaignViewModel.eliminarCampana(id.toString())
             }
 
         })
+
+
     }
 
 

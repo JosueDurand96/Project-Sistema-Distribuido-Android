@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.durand.domain.model.campaign.CampaignResponseModel
 import com.durand.vacunacionperu.R
 
-
 class CampaignAdapter(
         private val activity: Activity,
         private val listLine: List<CampaignResponseModel>
@@ -33,7 +32,9 @@ class CampaignAdapter(
         return listLine.size
     }
 
+
     private var mOnClickSelectedPedidosPendientes: OnClickSelectedPedidosPendientes? = null
+    private var mOnClickSelectedDelete: OnClickSelectedDelete? = null
 
     override fun onBindViewHolder(holder: LineViewHolder, position: Int) {
         holder.nameTextView.text = listLine[position].s_nombre
@@ -42,11 +43,18 @@ class CampaignAdapter(
         holder.fabricTextView.text = date
 
         holder.imageDeleteImageView.setOnClickListener {
-            mOnClickSelectedPedidosPendientes?.onSelectPedidosPendientes(
-                    listLine[position].id_campana,
-                    listLine[position].s_nombre!!
+            mOnClickSelectedDelete?.onSelectDelete(
+                    listLine[position].id_campana
             )
         }
+        holder.onlickConstraintLayout.setOnClickListener {
+            mOnClickSelectedPedidosPendientes?.onSelectPedidosPendientes(
+                listLine[position].id_campana,
+                listLine[position].id_vacuna!!,
+                listLine[position].id_local!!
+            )
+        }
+
 
     }
 
@@ -61,8 +69,23 @@ class CampaignAdapter(
         mOnClickSelectedPedidosPendientes = setOnClickSelectedPedidosPendientes
     }
 
+    fun setListenerItemDelete(setOnClickSelectedDelete: OnClickSelectedDelete) {
+        mOnClickSelectedDelete = setOnClickSelectedDelete
+    }
+
+
     interface OnClickSelectedPedidosPendientes {
-        fun onSelectPedidosPendientes(id: Int?, name: String)
+        fun onSelectPedidosPendientes(
+            id_campana: Int?,
+            id_vacuna: Int,
+            id_local: Int
+        )
+    }
+
+    interface OnClickSelectedDelete {
+        fun onSelectDelete(
+            id: Int?
+        )
     }
 
 }
