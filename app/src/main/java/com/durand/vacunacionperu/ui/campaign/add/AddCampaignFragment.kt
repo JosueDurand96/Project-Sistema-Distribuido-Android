@@ -72,10 +72,17 @@ class AddCampaignFragment : Fragment() {
             val month = c.get(Calendar.MONTH)
             val day = c.get(Calendar.DAY_OF_MONTH)
 
-            val dpd = DatePickerDialog(requireContext(), { _, year, monthOfYear, dayOfMonth ->
-                // Display Selected date in TextView
-
-                dateTextInputEditText.setText("$year-$monthOfYear-$dayOfMonth")
+            val dpd = DatePickerDialog(requireContext(), { _, yearS, monthOfYear, dayOfMonth ->
+                val mesT = monthOfYear + 1
+                var mesReal = ""
+                if (mesT < 10){
+                    mesReal = "0$mesT"
+                    Log.d("sumaaa","es menor a 10")
+                }else{
+                    mesReal = mesT.toString()
+                    Log.d("sumaaa","es mayoooor a 10")
+                }
+                dateTextInputEditText.setText("$yearS-$mesReal-$dayOfMonth")
             }, year, month, day)
             dpd.show()
         }
@@ -91,17 +98,23 @@ class AddCampaignFragment : Fragment() {
             vaccinationViewModel.getVaccination()
         }
         campanaButton.setOnClickListener {
-            postCampaignViewModel.postCampaign(
-                CampaignRequest(
-                    nameEditText.text.toString(),
-                    dateTextInputEditText.text.toString(),
-                    id_vacuna,
-                    id_local,
-                    cantidadAplicacionEditText.text.toString().toInt(),
-                    false,
-                    "medico@sistema.pe"
+            try {
+                postCampaignViewModel.postCampaign(
+                    CampaignRequest(
+                        nameEditText.text.toString(),
+                        dateTextInputEditText.text.toString(),
+                        id_vacuna,
+                        id_local,
+                        cantidadAplicacionEditText.text.toString().toInt(),
+                        false,
+                        "medico@sistema.pe"
+                    )
                 )
-            )
+            }catch (e:Exception){
+                Snackbar.make(mroot, "No se puede agregar falta campos!", Snackbar.LENGTH_SHORT)
+                    .setBackgroundTint(Color.RED).show()
+            }
+
         }
 
     }

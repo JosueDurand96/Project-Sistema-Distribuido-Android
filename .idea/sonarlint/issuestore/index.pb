@@ -15,8 +15,6 @@ m
 =app/src/main/java/com/durand/vacunacionperu/SplashActivity.kt,7/6/7637bc9b112b1c7f2ee967ba343c410163672036
 l
 <app/src/main/java/com/durand/vacunacionperu/LoginActivity.kt,c/6/c688844f283d98cb9a0bfd6a35f6973a963a4490
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 k
@@ -77,8 +75,6 @@ q
 Adomain/src/main/java/com/durand/domain/request/CampaignRequest.kt,c/9/c9d64c6851f8a80ca645883604d4db3583812b3b
 
 Odata/src/main/java/com/durand/data/mapper/campaign/PostCampaignRequestMapper.kt,3/e/3e4b51945554bbf75eff4aaf30701a47c438cf69
-‚
-Rapp/src/main/java/com/durand/vacunacionperu/ui/campaign/add/AddCampaignFragment.kt,3/7/370c7d32529155a51bdb19292c21f3f8b3821da4
 
 ]app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationViewModel.kt,6/b/6b821a2c52778b236e41e5df51cd4974d06ea91f
 i
