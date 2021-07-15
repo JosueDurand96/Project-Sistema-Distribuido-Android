@@ -1,4 +1,4 @@
-package com.durand.vacunacionperu.ui.advance_vaccination
+package com.durand.vacunacionperu.ui.close
 
 import com.bancom.cambix.model.error.ErrorMasterResponseModel
 import com.durand.domain.model.advanceVaccination.AdvanceVaccinationResponseModel

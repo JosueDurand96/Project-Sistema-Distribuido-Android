@@ -3,7 +3,7 @@ package com.durand.vacunacionperu.di
 import com.durand.data.implements.*
 import com.durand.domain.repositories.*
 import com.durand.domain.usecases.*
-import com.durand.vacunacionperu.ui.advance_vaccination.AdvanceVaccinationViewModel
+import com.durand.vacunacionperu.ui.close.AdvanceVaccinationViewModel
 import com.durand.vacunacionperu.ui.campaign.CampaignViewModel
 import com.durand.vacunacionperu.ui.campaign.DeleteCampaignViewModel
 import com.durand.vacunacionperu.ui.campaign.add.PostCampaignViewModel

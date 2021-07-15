@@ -1,4 +1,4 @@
-package com.durand.vacunacionperu.ui.advance_vaccination
+package com.durand.vacunacionperu.ui.close
 
 import android.app.Activity
 import android.view.LayoutInflater

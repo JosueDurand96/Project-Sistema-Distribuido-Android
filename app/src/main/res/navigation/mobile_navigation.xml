@@ -82,7 +82,7 @@
 
     <fragment
         android:id="@+id/nav_advance_vaccination"
-        android:name="com.durand.vacunacionperu.ui.advance_vaccination.AdvanceVaccinationFragment"
+        android:name="com.durand.vacunacionperu.ui.close.CloseFragment"
         android:label="@string/avance_de_vacunaci_n"
         tools:layout="@layout/fragment_advance_vaccination" />
 

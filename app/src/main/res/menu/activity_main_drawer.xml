@@ -20,15 +20,15 @@
             android:id="@+id/nav_campaign"
             android:icon="@drawable/ic_baseline_event_available_24"
             android:title="@string/campa_as" />
-        <item
-            android:id="@+id/nav_advance_vaccination"
-            android:icon="@drawable/ic_baseline_assistant_24"
-            android:visible="false"
-            android:title="@string/avance_de_vacunaci_n" />
 
         <item
             android:id="@+id/nav_consulta"
             android:icon="@drawable/ic_baseline_chrome_reader_mode_24"
             android:title="@string/consulta_dni" />
+
+        <item
+            android:id="@+id/nav_advance_vaccination"
+            android:icon="@drawable/ic_baseline_exit_to_app_24"
+            android:title="Salir" />
     </group>
 </menu>

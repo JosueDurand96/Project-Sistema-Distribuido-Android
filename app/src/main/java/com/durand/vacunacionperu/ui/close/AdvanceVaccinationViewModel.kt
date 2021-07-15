@@ -1,4 +1,4 @@
-package com.durand.vacunacionperu.ui.advance_vaccination
+package com.durand.vacunacionperu.ui.close
 
 import android.util.Log
 import androidx.lifecycle.LiveData
