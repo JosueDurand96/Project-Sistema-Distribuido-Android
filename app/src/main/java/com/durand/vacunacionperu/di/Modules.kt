@@ -10,6 +10,7 @@ import com.durand.vacunacionperu.ui.campaign.add.PostCampaignViewModel
 import com.durand.vacunacionperu.ui.campaign.update.PutCampaignViewModel
 import com.durand.vacunacionperu.ui.consulta.ConsultaDniViewModel
 import com.durand.vacunacionperu.ui.local_vaccination.LocalVaccinationViewModel
+import com.durand.vacunacionperu.ui.users.UserViewModel
 import com.durand.vacunacionperu.ui.vaccination.DeleteVaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.VaccinationViewModel
 import com.durand.vacunacionperu.ui.vaccination.add.PostVaccinationViewModel
@@ -73,4 +74,10 @@ val applicationModule = module {
     single { GetConsultaDniUseCase(get()) }
     single<ConsultaRepository> { ConsultaRepositoryImpl() }
     viewModel { ConsultaDniViewModel() }
+
+    //Campaign get
+    single { GetUserUseCase(get()) }
+    single<UserRepository> { UserRepositoryImpl() }
+    viewModel { UserViewModel() }
+
 }

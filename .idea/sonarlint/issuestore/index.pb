@@ -1,8 +1,4 @@
 
-u
-Eapp/src/main/java/com/durand/vacunacionperu/ui/users/UserViewModel.kt,1/c/1ce930238932114318f351433792eb1922328d32
-t
-Dapp/src/main/java/com/durand/vacunacionperu/ui/users/UserFragment.kt,8/2/82b491383ac6051d83f39eb059e9e1b7c473b40b
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 <
@@ -65,12 +61,6 @@ Adomain/src/main/java/com/durand/domain/request/CampaignRequest.kt,c/9/c9d64c68
 Odata/src/main/java/com/durand/data/mapper/campaign/PostCampaignRequestMapper.kt,3/e/3e4b51945554bbf75eff4aaf30701a47c438cf69
 
 ]app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationViewModel.kt,6/b/6b821a2c52778b236e41e5df51cd4974d06ea91f
-‹
-[app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationAdapter.kt,9/5/95b277ab7cb06aed04b8e7bc23843b32922f12b7
-|
-Lapp/src/main/java/com/durand/vacunacionperu/ui/campaign/CampaignViewModel.kt,2/9/29e5974b883a5d339969862146fe5e16288376db
-Œ
-\app/src/main/java/com/durand/vacunacionperu/ui/local_vaccination/LocalVaccinationFragment.kt,f/9/f9472f57218e860aa07c50d123010afdef0f14c4
 G
 networking/build.gradle,d/1/d1a6cc2b52d7e27292c6954fd81c15884aa335f1
 }
@@ -97,12 +87,8 @@ Rapp/src/main/java/com/durand/vacunacionperu/ui/campaign/DeleteCampaignViewModel
 Xapp/src/main/java/com/durand/vacunacionperu/ui/vaccination/DeleteVaccinationViewModel.kt,a/6/a654bb3f01df2bf3573d69904e20767e2f2f3bdc
 €
 Papp/src/main/java/com/durand/vacunacionperu/ui/vaccination/VaccinationAdapter.kt,2/b/2b512d8b0526ff605fe121cfb589d46f8e26b8fe
-z
-Japp/src/main/java/com/durand/vacunacionperu/ui/campaign/CampaignAdapter.kt,f/e/fecfd36cb3847b179ce30bc5f2e2b6933e75ae90
 
 Qapp/src/main/java/com/durand/vacunacionperu/ui/vaccination/VaccinationFragment.kt,d/4/d426f2b086a1a2d394fa0c9421c5ec69cc964581
-{
-Kapp/src/main/java/com/durand/vacunacionperu/ui/campaign/CampaignFragment.kt,1/b/1bd193d5393c4479b61eb12b52034d3a2da8e0ab
 ‚
 Rapp/src/main/java/com/durand/vacunacionperu/ui/campaign/add/AddCampaignFragment.kt,3/7/370c7d32529155a51bdb19292c21f3f8b3821da4
 }
@@ -129,8 +115,6 @@ u
 Edomain/src/main/java/com/durand/domain/usecases/PutCampaignUseCase.kt,b/2/b2a6b1d0f23684b26f79370ba9ae60b2873208bc
 
 _app/src/main/java/com/durand/vacunacionperu/ui/vaccination/update/UpdateVaccinationViewModel.kt,9/8/98a6c61c7e7ec9d6cbaf30f01e42cd2a437ddcc9
-x
-Happ/src/main/java/com/durand/vacunacionperu/ui/campaign/CampaignState.kt,1/9/1942413f8d8d25e1487898bedaefdf54893dc9de
 €
 Papp/src/main/java/com/durand/vacunacionperu/ui/campaign/add/PostCampaignState.kt,c/4/c4091d42dd61bdabf3dc7f6b50f218bbf7fa640e
 Ž

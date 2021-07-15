@@ -1,4 +1,4 @@
-package com.bancom.cambix.model.register
+package com.durand.domain.model.register
 
 data class RegisterModel (
     var error:Boolean?,

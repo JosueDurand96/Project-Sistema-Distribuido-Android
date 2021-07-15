@@ -1,6 +1,6 @@
 package com.durand.data.mapper.error
 
-import com.bancom.cambix.model.register.RegisterModel
+import com.durand.domain.model.register.RegisterModel
 import com.durand.data.entities.register.ErrorEntity
 import com.durand.data.mapper.Mapper
 
