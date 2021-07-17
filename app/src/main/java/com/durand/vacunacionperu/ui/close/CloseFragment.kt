@@ -38,7 +38,6 @@ class CloseFragment : BaseFragment() {
         salirButton.setOnClickListener {
             dialog!!.dismiss()
             requireActivity().finishAndRemoveTask()
-            clearFindViewByIdCache()
         }
         val noCloseButton: Button = dialog!!.findViewById<View>(R.id.noCloseButton) as Button
         noCloseButton.setOnClickListener {
