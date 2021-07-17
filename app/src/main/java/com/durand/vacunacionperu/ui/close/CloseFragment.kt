@@ -13,6 +13,7 @@ import android.widget.Button
 import com.durand.helper.base.BaseFragment
 import com.durand.vacunacionperu.MenuActivity
 import com.durand.vacunacionperu.R
+import kotlinx.android.synthetic.*
 
 class CloseFragment : BaseFragment() {
     var dialog: Dialog? = null
@@ -37,6 +38,7 @@ class CloseFragment : BaseFragment() {
         salirButton.setOnClickListener {
             dialog!!.dismiss()
             requireActivity().finishAndRemoveTask()
+            clearFindViewByIdCache()
         }
         val noCloseButton: Button = dialog!!.findViewById<View>(R.id.noCloseButton) as Button
         noCloseButton.setOnClickListener {
