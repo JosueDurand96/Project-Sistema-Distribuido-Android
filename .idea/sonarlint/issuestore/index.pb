@@ -1,12 +1,8 @@
 
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 C
 domain/build.gradle,a/3/a3021bb5ba623a461b5fdb89ae51923a4945c354
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 k
 ;helper/src/main/java/com/durand/helper/base/BaseFragment.kt,d/2/d2a6a7b7ae5c409fa43f6d9184a50f8039b81433
 ƒ
@@ -133,8 +129,6 @@ u
 Edomain/src/main/java/com/durand/domain/usecases/GetCampaignUseCase.kt,8/0/800cce41b1231cd6d502c77809c4e4ba46aaf0bd
 
 Odomain/src/main/java/com/durand/domain/repositories/DeleteCampaignRepository.kt,1/3/13de309d8c657c84f88cdfa7cbd582826bdf9fc9
-k
-;app/src/main/java/com/durand/vacunacionperu/MenuActivity.kt,d/4/d4dac36f95bf719a033991b695219fa18fc1b3fb
 v
 Fdomain/src/main/java/com/durand/domain/model/register/RegisterModel.kt,0/c/0ce981772a525464da1f02635953e2c354b02125
 x

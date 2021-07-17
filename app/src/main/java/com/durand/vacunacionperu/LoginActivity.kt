@@ -1,5 +1,6 @@
 package com.durand.vacunacionperu
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +22,19 @@ class LoginActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             initSession()
         }
+        forgotPhoneTextView.setOnClickListener {
+            setupWindowAnimations()
+        }
 
     }
+
+    private fun setupWindowAnimations() {
+        val i = Intent(this, SmsActivity::class.java)
+        val transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(this)
+        startActivity(i, transitionActivityOptions.toBundle())
+    }
+
+
 
 
     private fun initSession() {
