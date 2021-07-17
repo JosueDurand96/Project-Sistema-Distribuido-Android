@@ -62,7 +62,7 @@ class SmsActivity : AppCompatActivity() {
                 forceResendingToken = token
                 progressDialog.dismiss()
 
-                firstConstraintLayout.visibility = View.GONE
+                firstConstraintLayout.visibility = View.VISIBLE
                 secondConstraintLayout.visibility = View.VISIBLE
                 Toast.makeText(this@SmsActivity, "Verificando código!", Toast.LENGTH_LONG).show()
 
