@@ -24,9 +24,6 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun consumeSoap(){
-        
-    }
 
     private fun initSession() {
         if (userEditText.text!!.isEmpty()) {
